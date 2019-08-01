@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="static/css/style.css">
     <link rel='stylesheet' href="https://unpkg.com/@finos/perspective-viewer/dist/umd/material.css" is="custom-style">
 
-    <script src="https://unpkg.com/@finos/perspective"></script>
-    <script src="https://unpkg.com/@finos/perspective-viewer"></script>
-    <script src="https://unpkg.com/@finos/perspective-viewer-hypergrid"></script>
-    <script src="https://unpkg.com/@finos/perspective-viewer-d3fc"></script>
+    <script src="https://unpkg.com/@finos/perspective@0.3.0/build/perspective.js"></script>
+    <script src="https://unpkg.com/@finos/perspective-viewer@0.3.0/build/perspective.view.js"></script>
+    <script src="https://unpkg.com/@finos/perspective-viewer-hypergrid@0.3.0/build/hypergrid.plugin.js"></script>
+    <script src="https://unpkg.com/@finos/perspective-viewer-d3fc@0.3.0"></script>
 </head>
 <body>
     <perspective-viewer
-        plugin="d3_y_line"
+        view="y_line"
         columns='["Number of students"]'
         row-pivots='["Year"]'
         column-pivots='["Race", "Gender"]'
@@ -25,8 +25,8 @@
 <script>
 window.addEventListener('WebComponentsReady', function() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'static/csv/demographics.csv', true);
-    xhr.responseType = "text"
+    xhr.open('GET', 'static/arrow/demographics.arrow', true);
+    xhr.responseType = "arraybuffer"
     xhr.onload = function() {
         var el = document.getElementsByTagName('perspective-viewer')[0];
         el.load(xhr.response);
