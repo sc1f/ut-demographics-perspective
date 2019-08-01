@@ -24,9 +24,9 @@
 </body>
 <script>
 window.addEventListener('WebComponentsReady', function() {
-var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'static/arrow/demographics.arrow', true);
-    xhr.responseType = "arraybuffer"
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'static/csv/demographics.csv', true);
+    xhr.responseType = "text"
     xhr.onload = function() {
         var el = document.getElementsByTagName('perspective-viewer')[0];
         el.load(xhr.response);

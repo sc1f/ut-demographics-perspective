@@ -26,7 +26,7 @@ if __name__ == "__main__":
     with open(os.path.join(dirname, "../csv/ut_demographics.csv")) as in_csv:
         reader = csv.reader(in_csv)
         data = parse(reader)
-        with open(os.path.join(dirname, "../csv/ut_demographics_transformed.csv"), "w+") as out_csv:
+        with open(os.path.join(dirname, "../static/csv/demographics.csv"), "w+") as out_csv:
             writer = csv.writer(out_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             for row in data:
                 writer.writerow(row)

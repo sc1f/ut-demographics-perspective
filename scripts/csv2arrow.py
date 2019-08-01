@@ -4,7 +4,7 @@ from pyarrow import csv
 
 if __name__ == "__main__":
     # read CSV
-    csv_name = os.path.join(os.path.dirname(__file__), "../csv/ut_demographics_transformed.csv")
+    csv_name = os.path.join(os.path.dirname(__file__), "../static/csv/demographics.csv")
     # make sure bools are read correctly
     options = csv.ConvertOptions(
             column_types = 
