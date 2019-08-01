@@ -14,6 +14,9 @@ def parse(csv):
     for row in csv:
         del row[-2]
         for i in range(1, len(row)):
+            if row[i] == '':
+                row[i] = 0
+                continue
             row[i] = string_to_int(row[i])
         data.append(row)
     return data
