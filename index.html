@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UT Demographics Perspective</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://unpkg.com/@finos/perspective"></script>
+    <script src="https://unpkg.com/@finos/perspective-viewer"></script>
+    <script src="https://unpkg.com/@finos/perspective-viewer-hypergrid"></script>
+    <script src="https://unpkg.com/@finos/perspective-viewer-d3fc"></script>
+</head>
+<body>
+    <perspective-viewer
+        plugin="d3_y_line"
+        columns='["Number of students"]'
+        row-pivots='["Year"]'
+        column-pivots='["Race", "Gender"]'
+        sort='[["Number of students", "col asc"]]'></perspective-viewer>
+</body>
+<script>
+window.addEventListener('WebComponentsReady', function() {
+var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'static/arrow/demographics.arrow', true);
+    xhr.responseType = "arraybuffer"
+    xhr.onload = function() {
+        var el = document.getElementsByTagName('perspective-viewer')[0];
+        el.load(xhr.response);
+        el.toggleConfig();
+    }
+    xhr.send(null);
+});
+</script>
+</html>
