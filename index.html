@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="static/css/style.css">
     <link rel='stylesheet' href="https://unpkg.com/@finos/perspective-viewer/dist/umd/material.css" is="custom-style">
 
-    <script src="https://unpkg.com/@finos/perspective@0.3.0/build/perspective.js"></script>
-    <script src="https://unpkg.com/@finos/perspective-viewer@0.3.0/build/perspective.view.js"></script>
-    <script src="https://unpkg.com/@finos/perspective-viewer-hypergrid@0.3.0/build/hypergrid.plugin.js"></script>
-    <script src="https://unpkg.com/@finos/perspective-viewer-d3fc@0.3.0"></script>
+    <script src="https://unpkg.com/@finos/perspective"></script>
+    <script src="https://unpkg.com/@finos/perspective-viewer"></script>
+    <script src="https://unpkg.com/@finos/perspective-viewer-hypergrid"></script>
+    <script src="https://unpkg.com/@finos/perspective-viewer-d3fc"></script>
 </head>
 <body>
     <perspective-viewer
-        view="y_line"
+        view="d3_y_line"
         columns='["Number of students"]'
         row-pivots='["Year"]'
         column-pivots='["Race", "Gender"]'
